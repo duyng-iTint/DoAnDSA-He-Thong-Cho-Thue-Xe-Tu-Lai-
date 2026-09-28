@@ -273,3 +273,5 @@ liệu phân tích DSA của nhóm (Chương 16, mục III).
 - Phần UI màu đỏ cho "xe đang tranh chấp" (yêu cầu RF2) và tính năng
   Autocomplete (RF1, Trie) không thuộc phạm vi module này — chỉ cần gọi các
   hàm `RentalService::*` ở trên khi cần dữ liệu đã sắp xếp/tra cứu.
+
+# DoAnDSA-He-Thong-Cho-Thue-Xe-Tu-Lai-
