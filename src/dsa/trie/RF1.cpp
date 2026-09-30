@@ -137,7 +137,7 @@ public:
 int main() {
     CarTrie carCatalog;
 
-    // 1. Nạp danh mục xe giả lập vào cây Trie
+
     vector< pair< string, string > > sampleCars = {
         {"Toyota Vios 1.5E", "Toyota"},
         {"Toyota Vios 1.5G", "Toyota"},
