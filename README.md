@@ -162,5 +162,31 @@ Vai trò của indexMap.
 Cách RemoveById() hoạt động.
 Độ phức tạp của các thao tác.
 Cách OOP được sử dụng để đóng gói MyMaxHeap.
+## 12. So sánh MC2 và RF2
 
-**Bản này là vừa đủ cho GitHub**: có chức năng, cấu trúc dữ liệu, OOP, độ phức tạp, cách chạy và kết quả; còn phần giải thích từng dòng `SiftUp/SiftDown` bạn học để bảo vệ là được.
+MC2 và RF2 đều xử lý dữ liệu thuê xe nhưng sử dụng cấu trúc dữ liệu khác nhau do mục đích xử lý khác nhau.
+
+| Tiêu chí | MC2 | RF2 |
+|---|---|---|
+| Mục đích | Tra cứu/xử lý dữ liệu theo thứ tự hoặc điều kiện tìm kiếm | Xử lý các yêu cầu theo mức độ ưu tiên |
+| Cấu trúc dữ liệu | Sorted Array / cấu trúc hỗ trợ tìm kiếm | Binary Max-Heap |
+| Phần tử quan trọng | Dữ liệu được duy trì theo thứ tự | Request có độ ưu tiên cao nhất |
+| Cách lấy phần tử cần xử lý | Tìm kiếm trên dữ liệu đã sắp xếp | Lấy trực tiếp tại `heap[0]` |
+| Tiêu chí xử lý | Phụ thuộc vào khóa/điều kiện của MC2 | `membershipTier` và `bookingTimestamp` |
+| Thao tác chính | Sắp xếp và tìm kiếm | `InsertRequest()`, `ExtractMax()`, `RemoveById()` |
+| Mục tiêu | Hỗ trợ tra cứu hiệu quả | Hỗ trợ xử lý request ưu tiên |
+
+### Điểm khác nhau chính
+
+MC2 tập trung vào việc **sắp xếp và tra cứu dữ liệu**, vì vậy dữ liệu cần được duy trì theo thứ tự để phục vụ các thao tác tìm kiếm.
+
+RF2 tập trung vào việc **xử lý request có độ ưu tiên cao nhất**, vì vậy Binary Max-Heap phù hợp hơn. Request ưu tiên cao nhất luôn được duy trì tại `heap[0]`.
+
+Có thể hiểu đơn giản:
+
+```text
+MC2
+Dữ liệu → Sắp xếp → Tìm kiếm
+
+RF2
+Request → Xác định ưu tiên → Max-Heap → Lấy request ưu tiên nhất
